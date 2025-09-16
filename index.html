@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
+    <!-- Background Campfire Audio -->
+    <audio id="campfireAudio" loop>
+        <source src="campfirenoises.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
     <div class="content">
         <h1>Hello! My name is Fiona.</h1>
         <p>Enjoy your time at my roasty toasty campfire</p>
@@ -28,5 +34,66 @@
             </div>
         </div>
     </div>
+
+    <!-- Audio Toggle Button -->
+    <button id="audioToggle" class="audio-toggle">
+        <img src="audiooff.png" alt="Audio Toggle" id="audioIcon">
+    </button>
+
+    <script>
+        // Handle audio playback and toggle functionality
+        const audio = document.getElementById('campfireAudio');
+        const audioToggle = document.getElementById('audioToggle');
+        const audioIcon = document.getElementById('audioIcon');
+        let audioStarted = false;
+        let isPlaying = false;
+
+        function startAudio() {
+            if (!audioStarted) {
+                audio.play().then(() => {
+                    audioStarted = true;
+                    isPlaying = true;
+                    audioIcon.src = 'audioon.png';
+                }).catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+            }
+        }
+
+        function toggleAudio() {
+            if (!audioStarted) {
+                startAudio();
+            } else {
+                if (isPlaying) {
+                    audio.pause();
+                    isPlaying = false;
+                    audioIcon.src = 'audiooff.png';
+                } else {
+                    audio.play().then(() => {
+                        isPlaying = true;
+                        audioIcon.src = 'audioon.png';
+                    }).catch(error => {
+                        console.log('Audio play failed:', error);
+                    });
+                }
+            }
+        }
+
+        // Audio toggle button click handler
+        audioToggle.addEventListener('click', toggleAudio);
+
+        // Start audio on any user interaction (excluding toggle button)
+        document.addEventListener('click', function(e) {
+            if (e.target !== audioToggle && !audioToggle.contains(e.target)) {
+                startAudio();
+            }
+        });
+        document.addEventListener('keydown', startAudio);
+        document.addEventListener('touchstart', function(e) {
+            if (e.target !== audioToggle && !audioToggle.contains(e.target)) {
+                startAudio();
+            }
+        });
+    </script>
 </body>
 </html>

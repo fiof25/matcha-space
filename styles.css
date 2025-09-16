@@ -99,6 +99,28 @@ p {
     transform: scale(1.05);
 }
 
+/* Audio Toggle Button */
+.audio-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.audio-toggle:hover {
+    transform: scale(1.1);
+}
+
+.audio-toggle img {
+    width: 120px;
+    height: 120px;
+}
+
 /* Fire Frame Animation */
 .fire-container {
     position: relative;
