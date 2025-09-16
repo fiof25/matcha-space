@@ -61,7 +61,7 @@ p {
 .dragon-container {
     position: absolute;
     left: -200px;
-    top: 40%;
+    top: 55%;
     transform: translateY(-50%);
 }
 
@@ -82,7 +82,7 @@ p {
 .raccoon-container {
     position: absolute;
     right: -200px;
-    top: 30%;
+    top: 45%;
     transform: translateY(-50%);
 }
 
