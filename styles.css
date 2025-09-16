@@ -48,6 +48,36 @@ p {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Campfire Scene Layout */
+.campfire-scene {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: calc(2rem + 80px) auto 2rem auto;
+}
+
+/* Dragon Positioning */
+.dragon-container {
+    position: absolute;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dragon {
+    width: 350px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.dragon:hover {
+    content: url('dragonpressed.png');
+    transform: scale(1.05);
+}
+
 /* Fire Frame Animation */
 .fire-container {
     position: relative;
@@ -55,7 +85,6 @@ p {
     height: 55vh;
     max-width: 500px;
     max-height: 450px;
-    margin: calc(2rem + 150px) auto 2rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
