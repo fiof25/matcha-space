@@ -61,7 +61,7 @@ p {
 .dragon-container {
     position: absolute;
     left: -200px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
 }
 
@@ -75,6 +75,27 @@ p {
 
 .dragon:hover {
     content: url('dragonpressed.png');
+    transform: scale(1.05);
+}
+
+/* Raccoon Positioning */
+.raccoon-container {
+    position: absolute;
+    right: -200px;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.raccoon {
+    width: 350px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.raccoon:hover {
+    content: url('racoonpressed.png');
     transform: scale(1.05);
 }
 
